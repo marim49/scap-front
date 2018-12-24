@@ -1,6 +1,9 @@
 <template>
 <!-- Page header -->
-<div class="page-header page-header-default">
+<div>
+    <br>
+    <br>
+    <div class="page-header page-header-default">
     <div class="page-header-content">
         <div class="page-title">
             <h4>
@@ -13,6 +16,7 @@
             <slot name="heading-elements"></slot>
         </div>
     </div>
+</div>
 </div>
 <!-- /page header -->
 </template>
