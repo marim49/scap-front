@@ -1,13 +1,13 @@
 <template>
 <div>
     <page-header>
-        <span class="text-semibold">Disciplinas</span>
+        <span class="text-semibold">Salas</span>
         <div slot="heading-elements"
             class="heading-btn-group">
-            <router-link to="/cadastro/disciplina"
+            <router-link to="/cadastro/sala"
                 class="btn btn-primary">
                 <i class="icon-books position-left"></i>
-                <span>Cadastrar disciplina</span>
+                <span>Cadastrar salas</span>
             </router-link>
         </div>
     </page-header>
@@ -18,15 +18,15 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Código</th>
-                                <th>Descrição</th>
+                                <th>Número/Identificador</th>
+                                <th>Capacidade</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="linha in tabela"
                                 :key="linha.id">
-                                <td>{{ linha.codigo }}</td>
-                                <td>{{ linha.descricao }}</td>
+                                <td>{{ linha.id }}</td>
+                                <td>{{ linha.nome }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -50,7 +50,7 @@ export default {
     async created() {
         try {
             this.showLoading()
-            let { data } = await axios.get('/api/disciplina/disciplina')
+            let { data } = await axios.get('/api/cadastro/disciplina')
             this.tabela = data
         } catch (err) {
             PNotify.error('Erro ao obter dados do servidor. Tente novamente mais tarde.')

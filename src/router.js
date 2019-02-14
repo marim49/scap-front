@@ -22,5 +22,26 @@ export default new Router({
             path: '/disciplinas',
             component: require('@/views/disciplina/Index').default,
         },
+        {
+            path: '/ensalamento',
+            component: require('@/views/ensalamento/Index').default,
+        },
+        {
+            path: '/professores',
+            component: require('@/views/professor/Index').default,
+        },
+        {
+            path: '/salas',
+            component: require('@/views/sala/Index').default,
+        },
+        {
+            path: '/turmas',
+            component: require('@/views/turma/Index').default,
+        },  
+        {
+            path: '/cadastro/disciplina',
+            component: require('@/views/disciplina/Novo').default
+        }, 
+
     ],
 })
